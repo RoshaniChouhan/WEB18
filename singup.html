@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singup</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+       #container>form> input{
+            display: block;
+            margin: auto;
+            margin-bottom: 15px;
+            width: auto;
+            margin-top: 30px;
+            padding: 10px 30px 10px 30px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+#container{
+    height: 450px;
+ width: 20%;
+    border-radius: 30px;   
+    background-color: white;
+     /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>singup</h1>
+    <form id="form">
+        <input id="email" placeholder="enteremail" type="text">
+        <input id="mob" placeholder="number"type="number">
+        <input id="passward"placeholder="enter passward"type="passward">
+        <input type="submit" value="Login">
+    </form>
+</div>
+</body>
+</html>
+<script>
+   var form= document.querySelector("#form");
+   
+
+
+   form.addEventListener("submit",function(event){
+       event.preventDefault();
+       var data={
+           useremail:form.email.value,
+           usermob:form.mob.value,
+           userpass:form.passward.value,
+       }
+       alert("singup succesfull" )
+    //    console.log(data);
+    window.location.href="login.html"
+    localStorage.setItem("userData",JSON.stringify(data));
+   })
+    
+</script>

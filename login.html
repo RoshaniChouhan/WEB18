@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+          h1{
+            text-align: center;
+        }
+       #container>form> input{
+            display: block;
+            margin: auto;
+            margin-bottom: 15px;
+          
+            width: auto;
+            padding: 10px 30px 10px 30px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+#container{
+    height: 300px;
+  width: 20%;
+  /* background-color: antiquewhite; */
+  background-color: wheat;
+     /* border: 1px solid black;  */
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 30px;   
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Login
+        </h1>
+        <form id="form">
+            <input id="email" placeholder="enteremail" type="text">
+            <!-- <input id="mob" placeholder="number"type="number"> -->
+            <input id="passward"placeholder="enter passward"type="passward">
+            <input type="submit" value="Login">
+        </form>
+    </div>
+   
+    
+</body>
+
+</html>
+
+<script>
+  var form=document.querySelector("#form");
+var userData=JSON.parse(localStorage.getItem("userData"));
+
+
+
+
+
+
+  form.addEventListener("submit",function(event){
+      event.preventDefault();
+      var data={
+          email:form.email.value,
+          passward:form.passward.value,
+      }
+      if(userData===null){
+          alert("login fail")
+      }else if(userData.email==data.email &&userData.passward==data.passward){
+          alert("login succesfull")
+          localStorage.setItem("singin",JSON.stringify(userData))
+      }
+   
+  })
+
+</script>
